@@ -1,0 +1,61 @@
+<?php
+
+return [
+    'singular' => 'Provider',
+    'plural' => 'Providers',
+    'empty' => 'There are no providers yet.',
+    'count' => 'Providers Count.',
+    'search' => 'Search',
+    'select' => 'Select Provider',
+    'permission' => 'Manage providers',
+    'trashed' => 'providers Trashed',
+    'perPage' => 'Results Per Page',
+    'filter' => 'Search for provider',
+    'actions' => [
+        'list' => 'List All',
+        'create' => 'Create a new provider',
+        'show' => 'Show provider',
+        'edit' => 'Edit provider',
+        'delete' => 'Delete provider',
+        'options' => 'Options',
+        'save' => 'Save',
+        'filter' => 'Filter',
+    ],
+    'messages' => [
+        'created' => 'The provider has been created successfully.',
+        'updated' => 'The provider has been updated successfully.',
+        'deleted' => 'The provider has been deleted successfully.',
+        'restored' => 'The provider has been restored successfully.',
+    ],
+    'attributes' => [
+        'name' => 'Name',
+        'phone' => 'Phone',
+        'email' => 'Email',
+        'created_at' => 'The Date Of Join',
+        'old_password' => 'Old Password',
+        'password' => 'Password',
+        'password_confirmation' => 'Password Confirmation',
+        'type' => 'User Type',
+        'avatar' => 'Avatar',
+    ],
+    'dialogs' => [
+        'delete' => [
+            'title' => 'Warning !',
+            'info' => 'Are you sure you want to delete the provider?',
+            'confirm' => 'Delete',
+            'cancel' => 'Cancel',
+        ],
+        'restore' => [
+            'title' => 'Warning !',
+            'info' => 'Are you sure you want to restore the provider?',
+            'confirm' => 'Restore',
+            'cancel' => 'Cancel',
+        ],
+        'forceDelete' => [
+            'title' => 'Warning !',
+            'info' => 'Are you sure you want to force delete the provider?',
+            'confirm' => 'Force',
+            'cancel' => 'Cancel',
+        ],
+    ],
+];
