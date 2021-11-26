@@ -24,6 +24,7 @@ $this->call(EducationSeeder::class);
 $this->call(JobTypeSeeder::class);
 $this->call(JobFieldSeeder::class);
 $this->call(SkillSeeder::class);
+$this->call(EmployerSeeder::class);
 /*  The seeders of generated crud will set here: Don't remove this line  */
 
     }

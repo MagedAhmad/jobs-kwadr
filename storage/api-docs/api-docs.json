@@ -215,6 +215,104 @@
                 }
             }
         },
+        "/employers": {
+            "get": {
+                "tags": [
+                    "Employers"
+                ],
+                "summary": "Get list of employers",
+                "description": "Returns list of employers",
+                "operationId": "getEmployersList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EmployerResource"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/employers/{id}": {
+            "get": {
+                "tags": [
+                    "Employers"
+                ],
+                "summary": "Get employer information",
+                "description": "Returns employer data",
+                "operationId": "getEmployerById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Employer id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Employer"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/select/employers": {
+            "get": {
+                "tags": [
+                    "Employers"
+                ],
+                "summary": "Get list of Select employers",
+                "description": "Returns list of Select employers",
+                "operationId": "getSelectEmployersList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EmployerResource"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
         "/job_fields": {
             "get": {
                 "tags": [
@@ -840,6 +938,50 @@
                     "name": "Education"
                 }
             },
+            "Employer": {
+                "title": "Employer",
+                "description": "Employer model",
+                "properties": {
+                    "id": {
+                        "title": "ID",
+                        "description": "ID",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "name": {
+                        "title": "Name",
+                        "description": "Name of the new employer",
+                        "type": "string",
+                        "example": "A nice employer"
+                    },
+                    "created_at": {
+                        "title": "Created at",
+                        "description": "Created at",
+                        "type": "string",
+                        "format": "datetime",
+                        "example": "2020-01-27 17:50:45"
+                    },
+                    "updated_at": {
+                        "title": "Updated at",
+                        "description": "Updated at",
+                        "type": "string",
+                        "format": "datetime",
+                        "example": "2020-01-27 17:50:45"
+                    },
+                    "deleted_at": {
+                        "title": "Deleted at",
+                        "description": "Deleted at",
+                        "type": "string",
+                        "format": "datetime",
+                        "example": "2020-01-27 17:50:45"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Employer"
+                }
+            },
             "JobField": {
                 "title": "JobField",
                 "description": "JobField model",
@@ -1144,6 +1286,20 @@
                 "type": "object",
                 "xml": {
                     "name": "EducationResource"
+                }
+            },
+            "EmployerResource": {
+                "title": "EmployerResource",
+                "description": "Employer resource",
+                "properties": {
+                    "data": {
+                        "title": "Data",
+                        "description": "Data wrapper"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "EmployerResource"
                 }
             },
             "JobFieldResource": {
