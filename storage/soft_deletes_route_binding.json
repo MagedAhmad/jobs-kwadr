@@ -7,5 +7,6 @@
     "trashed_martial": "App\\Models\\Martial",
     "trashed_educational_qualification": "App\\Models\\EducationalQualification",
     "trashed_education": "App\\Models\\Education",
-    "trashed_job_type": "App\\Models\\JobType"
+    "trashed_job_type": "App\\Models\\JobType",
+    "trashed_job_field": "App\\Models\\JobField"
 }

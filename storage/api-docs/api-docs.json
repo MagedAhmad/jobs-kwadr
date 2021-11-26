@@ -215,6 +215,104 @@
                 }
             }
         },
+        "/job_fields": {
+            "get": {
+                "tags": [
+                    "JobFields"
+                ],
+                "summary": "Get list of job_fields",
+                "description": "Returns list of job_fields",
+                "operationId": "getJobFieldsList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JobFieldResource"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/job_fields/{id}": {
+            "get": {
+                "tags": [
+                    "JobFields"
+                ],
+                "summary": "Get job_field information",
+                "description": "Returns job_field data",
+                "operationId": "getJobFieldById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "JobField id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JobField"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/select/job_fields": {
+            "get": {
+                "tags": [
+                    "JobFields"
+                ],
+                "summary": "Get list of Select job_fields",
+                "description": "Returns list of Select job_fields",
+                "operationId": "getSelectJobFieldsList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JobFieldResource"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
         "/job_types": {
             "get": {
                 "tags": [
@@ -644,6 +742,50 @@
                     "name": "Education"
                 }
             },
+            "JobField": {
+                "title": "JobField",
+                "description": "JobField model",
+                "properties": {
+                    "id": {
+                        "title": "ID",
+                        "description": "ID",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "name": {
+                        "title": "Name",
+                        "description": "Name of the new job_field",
+                        "type": "string",
+                        "example": "A nice job_field"
+                    },
+                    "created_at": {
+                        "title": "Created at",
+                        "description": "Created at",
+                        "type": "string",
+                        "format": "datetime",
+                        "example": "2020-01-27 17:50:45"
+                    },
+                    "updated_at": {
+                        "title": "Updated at",
+                        "description": "Updated at",
+                        "type": "string",
+                        "format": "datetime",
+                        "example": "2020-01-27 17:50:45"
+                    },
+                    "deleted_at": {
+                        "title": "Deleted at",
+                        "description": "Deleted at",
+                        "type": "string",
+                        "format": "datetime",
+                        "example": "2020-01-27 17:50:45"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "JobField"
+                }
+            },
             "JobType": {
                 "title": "JobType",
                 "description": "JobType model",
@@ -860,6 +1002,20 @@
                 "type": "object",
                 "xml": {
                     "name": "EducationResource"
+                }
+            },
+            "JobFieldResource": {
+                "title": "JobFieldResource",
+                "description": "JobField resource",
+                "properties": {
+                    "data": {
+                        "title": "Data",
+                        "description": "Data wrapper"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "JobFieldResource"
                 }
             },
             "JobTypeResource": {
