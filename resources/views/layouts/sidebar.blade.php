@@ -14,6 +14,7 @@
 @include('dashboard.profiles.partials.actions.sidebar')
 @include('dashboard.martials.partials.actions.sidebar')
 @include('dashboard.education.partials.actions.sidebar')
+@include('dashboard.job_types.partials.actions.sidebar')
 {{-- The sidebar of generated crud will set here: Don't remove this line --}}
 {{--@include('dashboard.feedback.partials.actions.sidebar')--}}
 @include('dashboard.settings.sidebar')

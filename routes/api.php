@@ -74,4 +74,6 @@ Route::apiResource('educational_qualifications', 'EducationalQualificationContro
 Route::get('/select/educational_qualifications', 'EducationalQualificationController@select')->name('educational_qualifications.select');
 Route::apiResource('education', 'EducationController');
 Route::get('/select/education', 'EducationController@select')->name('education.select');
+Route::apiResource('job_types', 'JobTypeController');
+Route::get('/select/job_types', 'JobTypeController@select')->name('job_types.select');
 /*  The routes of generated crud will set here: Don't remove this line  */

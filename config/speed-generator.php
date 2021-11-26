@@ -219,5 +219,39 @@ return [
                 ],
             ],
         ],
+    ],
+    'job_type' => [
+        /**
+         * Set arabic translation
+         *
+         * Make sure to provide 4 words like the example
+         */
+        'arabic' => ['تفضيلات العمل ', 'تفضيلات العمل', 'تفضيل العمل', 'تفضيل العمل'],
+        /**
+         * Database fields
+         */
+        'database_fields' => [
+
+        ],
+
+        /**
+         * Make active equal to true if you want to add translation fields
+     * then add translatable fields
+         */
+        'translatable' => [
+            'active' => true,
+            'translatable_fields' => [
+                [
+                    'name' => 'name',
+                    'type' => 'string',
+                    'lang' => [
+                        'ar' => 'اسم تفضيل العمل',
+                        'en' => 'Job type',
+                    ],
+                    'options' => [
+                    ],
+                ],
+            ],
+        ],
     ]
 ];
