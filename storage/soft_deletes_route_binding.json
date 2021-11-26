@@ -10,5 +10,6 @@
     "trashed_job_type": "App\\Models\\JobType",
     "trashed_job_field": "App\\Models\\JobField",
     "trashed_skill": "App\\Models\\Skill",
-    "trashed_employer": "App\\Models\\Employer"
+    "trashed_employer": "App\\Models\\Employer",
+    "trashed_supporter": "App\\Models\\Supporter"
 }

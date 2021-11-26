@@ -82,4 +82,6 @@ Route::apiResource('skills', 'SkillController');
 Route::get('/select/skills', 'SkillController@select')->name('skills.select');
 Route::apiResource('employers', 'EmployerController');
 Route::get('/select/employers', 'EmployerController@select')->name('employers.select');
+Route::apiResource('supporters', 'SupporterController');
+Route::get('/select/supporters', 'SupporterController@select')->name('supporters.select');
 /*  The routes of generated crud will set here: Don't remove this line  */

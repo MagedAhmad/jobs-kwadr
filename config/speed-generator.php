@@ -356,4 +356,38 @@ return [
             ],
         ],
     ],
+    'supporter' => [
+        /**
+         * Set arabic translation
+         *
+         * Make sure to provide 4 words like the example
+         */
+        'arabic' => ['مصدر الدعم ', 'مصادر الدعم', 'مصدر الدعم', 'مصدر الدعم'],
+        /**
+         * Database fields
+         */
+        'database_fields' => [
+
+        ],
+
+        /**
+         * Make active equal to true if you want to add translation fields
+         * then add translatable fields
+         */
+        'translatable' => [
+            'active' => true,
+            'translatable_fields' => [
+                [
+                    'name' => 'name',
+                    'type' => 'string',
+                    'lang' => [
+                        'ar' => 'اسم مصدر الدعم  ',
+                        'en' => 'Supporter',
+                    ],
+                    'options' => [
+                    ],
+                ],
+            ],
+        ],
+    ],
 ];
