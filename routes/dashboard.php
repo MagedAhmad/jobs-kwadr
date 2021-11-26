@@ -140,6 +140,13 @@ Route::get('status/providers/{provider}', 'ProviderController@status')->name('pr
         Route::post('job_fields/{trashed_job_field}/restore', 'JobFieldController@restore')->name('job_fields.restore');
         Route::delete('job_fields/{trashed_job_field}/forceDelete', 'JobFieldController@forceDelete')->name('job_fields.forceDelete');
         Route::resource('job_fields', 'JobFieldController');
+
+        Route::get('trashed/skills', 'SkillController@trashed')->name('skills.trashed');
+        Route::get('trashed/skills/{trashed_skill}', 'SkillController@showTrashed')->name('skills.trashed.show');
+        Route::post('skills/{trashed_skill}/restore', 'SkillController@restore')->name('skills.restore');
+        Route::delete('skills/{trashed_skill}/forceDelete', 'SkillController@forceDelete')->name('skills.forceDelete');
+        Route::resource('skills', 'SkillController');
 /*  The routes of generated crud will set here: Don't remove this line  */
+        
         
         
