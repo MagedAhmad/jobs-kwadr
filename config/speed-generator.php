@@ -390,4 +390,38 @@ return [
             ],
         ],
     ],
+    'training_type' => [
+        /**
+         * Set arabic translation
+         *
+         * Make sure to provide 4 words like the example
+         */
+        'arabic' => ['نوع التدريب', 'نوع التدريب', 'نوع التدريب', 'نوع التدريب'],
+        /**
+         * Database fields
+         */
+        'database_fields' => [
+
+        ],
+
+        /**
+         * Make active equal to true if you want to add translation fields
+         * then add translatable fields
+         */
+        'translatable' => [
+            'active' => true,
+            'translatable_fields' => [
+                [
+                    'name' => 'name',
+                    'type' => 'string',
+                    'lang' => [
+                        'ar' => 'اسم نوع التدريب   ',
+                        'en' => 'Training type',
+                    ],
+                    'options' => [
+                    ],
+                ],
+            ],
+        ],
+    ],
 ];

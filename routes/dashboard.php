@@ -158,7 +158,14 @@ Route::get('status/providers/{provider}', 'ProviderController@status')->name('pr
         Route::post('supporters/{trashed_supporter}/restore', 'SupporterController@restore')->name('supporters.restore');
         Route::delete('supporters/{trashed_supporter}/forceDelete', 'SupporterController@forceDelete')->name('supporters.forceDelete');
         Route::resource('supporters', 'SupporterController');
+
+        Route::get('trashed/training_types', 'TrainingTypeController@trashed')->name('training_types.trashed');
+        Route::get('trashed/training_types/{trashed_training_type}', 'TrainingTypeController@showTrashed')->name('training_types.trashed.show');
+        Route::post('training_types/{trashed_training_type}/restore', 'TrainingTypeController@restore')->name('training_types.restore');
+        Route::delete('training_types/{trashed_training_type}/forceDelete', 'TrainingTypeController@forceDelete')->name('training_types.forceDelete');
+        Route::resource('training_types', 'TrainingTypeController');
 /*  The routes of generated crud will set here: Don't remove this line  */
+        
         
         
         
