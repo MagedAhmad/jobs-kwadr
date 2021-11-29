@@ -74,6 +74,62 @@
                                 @endif
                             </td>
                         </tr>
+                        <tr>
+                            <th width="200">@lang("martials.attributes.name")</th>
+                            <td>
+                                {{$profile->martial->name}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="200">@lang("profiles.attributes.neighbour_name")</th>
+                            <td>
+                                {{$profile->neighbour_name}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="200">@lang("profiles.attributes.street")</th>
+                            <td>
+                                {{$profile->street}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="200">@lang("profiles.attributes.postal_code")</th>
+                            <td>
+                                {{$profile->postal_code}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="200">@lang("profiles.attributes.additional_number")</th>
+                            <td>
+                                {{$profile->additional_number}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="200">@lang("profiles.attributes.building_no")</th>
+                            <td>
+                                {{$profile->building_no}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="200">@lang("countries.attributes.name")</th>
+                            <td>
+                                {{$profile->country->name}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="200">@lang("cities.attributes.name")</th>
+                            <td>
+                                {{$profile->city->name}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="200">@lang("areas.attributes.name")</th>
+                            <td>
+                                {{$profile->area->name}}
+                            </td>
+                        </tr>
+                        
+
             
                     @if($profile->getFirstMedia())
                         <tr>

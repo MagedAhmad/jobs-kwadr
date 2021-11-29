@@ -44,6 +44,11 @@ return [
         'country_id' => 'الجنسية',
         'created_at' => 'اضافة في',
         'deleted_at' => 'حذف في',
+        'neighbour_name' => 'اسم الحى',
+        'additional_number' => 'رقم اضافي',
+        'street' => 'اسم الشارع',
+        'postal_code' => 'رقم البريد',
+        'building_no' => 'رقم المبنى',
     ],
     'dialogs' => [
         'delete' => [
