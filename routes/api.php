@@ -31,17 +31,16 @@ Route::get('/select/packages', 'SelectController@packages')->name('packages.sele
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('verification/send', 'VerificationController@send')->name('verification.send');
     Route::post('verification/verify', 'VerificationController@verify')->name('verification.verify');
-    Route::get('profile', 'ProfileController@show')->name('profile.show');
-    Route::match(['put', 'patch'], 'profile', 'ProfileController@update')->name('profile.update');
 });
+
+Route::post('profile', 'ProfileController@store')->name('profile.store');
+
 Route::post('/editor/upload', 'MediaController@editorUpload')->name('editor.upload');
 Route::get('/settings', 'SettingController@index')->name('settings.index');
 Route::get('/settings/pages/{page}', 'SettingController@page')
     ->where('page', 'about|terms|privacy')->name('settings.page');
 
 Route::post('feedback', 'FeedbackController@store')->name('feedback.send');
-Route::apiResource('categories', 'CategoryController');
-Route::get('/select/categories', 'CategoryController@select')->name('categories.select');
 Route::apiResource('cities', 'CityController');
 Route::get('/select/cities', 'CityController@select')->name('cities.select');
 Route::apiResource('roles', 'RoleController');
@@ -61,9 +60,6 @@ Route::get('countries/cities/options', 'SelectController@options')->name('cities
 Route::get('areas', 'AreaController@index');
 Route::get('areas/options', 'AreaController@options')->name('areas.options');
 
-
-Route::apiResource('categories', 'CategoryController');
-Route::get('/select/categories', 'CategoryController@select')->name('categories.select');
 Route::apiResource('providers', 'ProviderController');
 Route::get('/select/providers', 'ProviderController@select')->name('providers.select');
 Route::apiResource('profiles', 'ProfileController');

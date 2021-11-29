@@ -6,7 +6,6 @@ use App\Models\OwnerRequest;
 use App\Http\Resources\Countries\AreaResource;
 use App\Http\Resources\Countries\CityResource;
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Http\Resources\Categories\CategoryResource;
 
 /** @mixin OwnerRequest */
 class OwnerRequestResource extends JsonResource

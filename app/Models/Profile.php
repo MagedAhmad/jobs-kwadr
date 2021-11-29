@@ -67,4 +67,104 @@ class Profile extends Model implements HasMedia
     {
         $this->addMediaCollection('default');
     }
+
+    /**
+     * Get martial
+     *
+     * @return void
+     */
+    public function martial()
+    {
+        return $this->belongsTo(Martial::class);
+    }
+
+    /**
+     * Get country
+     *
+     * @return void
+     */
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
+
+    /**
+     * Get city
+     *
+     * @return void
+     */
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
+
+    /**
+     * Get area
+     *
+     * @return void
+     */
+    public function area()
+    {
+        return $this->belongsTo(Area::class);
+    }
+
+    /**
+     * Get job Type
+     *
+     * @return void
+     */
+    public function job_type()
+    {
+        return $this->belongsTo(JobType::class);
+    }
+
+    /**
+     * Get job field
+     *
+     * @return void
+     */
+    public function job_field()
+    {
+        return $this->belongsTo(JobField::class);
+    }
+
+    /**
+     * Get skill
+     *
+     * @return void
+     */
+    public function skill()
+    {
+        return $this->belongsTo(Skill::class);
+    }
+
+    /**
+     * Get employer
+     *
+     * @return void
+     */
+    public function employer()
+    {
+        return $this->belongsTo(Employer::class);
+    }
+
+    /**
+     * Get supporter
+     *
+     * @return void
+     */
+    public function supporter()
+    {
+        return $this->belongsTo(Supporter::class);
+    }
+
+    /**
+     * Get training type
+     *
+     * @return void
+     */
+    public function training_type()
+    {
+        return $this->belongsTo(TrainingType::class);
+    }
 }

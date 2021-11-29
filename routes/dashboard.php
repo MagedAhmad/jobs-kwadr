@@ -75,12 +75,6 @@ Route::patch('feedback/unread', 'FeedbackController@unread')->name('feedback.unr
 Route::resource('feedback', 'FeedbackController')->only('index', 'show', 'destroy');
 
 
-Route::get('trashed/categories', 'CategoryController@trashed')->name('categories.trashed');
-Route::get('trashed/categories/{trashed_category}', 'CategoryController@showTrashed')->name('categories.trashed.show');
-Route::post('categories/{trashed_category}/restore', 'CategoryController@restore')->name('categories.restore');
-Route::delete('categories/{trashed_category}/forceDelete', 'CategoryController@forceDelete')->name('categories.forceDelete');
-Route::resource('categories', 'CategoryController');
-
 // notifications
 Route::resource('notifications', 'NotificationController');
 
@@ -96,13 +90,6 @@ Route::resource('countries.cities', 'CityController')->except('create');
 Route::resource('cities.areas', 'AreaController')->except('create', 'show');
 // pages
 Route::resource('pages', 'PageController');
-
-Route::get('trashed/categories', 'CategoryController@trashed')->name('categories.trashed');
-Route::get('trashed/categories/{trashed_category}', 'CategoryController@showTrashed')->name('categories.trashed.show');
-Route::post('categories/{trashed_category}/restore', 'CategoryController@restore')->name('categories.restore');
-Route::delete('categories/{trashed_category}/forceDelete', 'CategoryController@forceDelete')->name('categories.forceDelete');
-Route::resource('categories', 'CategoryController');
-
 
 Route::get('trashed/providers', 'ProviderController@trashed')->name('providers.trashed');
 Route::get('trashed/providers/{trashed_provider}', 'ProviderController@showTrashed')->name('providers.trashed.show');

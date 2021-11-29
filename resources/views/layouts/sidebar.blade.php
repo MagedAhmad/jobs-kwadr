@@ -8,7 +8,6 @@
 @include('dashboard.accounts.sidebar')
 @include('dashboard.countries.partials.actions.sidebar')
 {{--@include('dashboard.pages.partials.actions.sidebar')--}}
-{{--@include('dashboard.categories.partials.actions.sidebar')--}}
 {{--@include('dashboard.notifications.sidebar')--}}
 
 @include('dashboard.profiles.partials.actions.sidebar')

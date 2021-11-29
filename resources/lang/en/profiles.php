@@ -65,4 +65,8 @@ return [
             'cancel' => 'Cancel',
         ],
     ],
+    'gender' => [
+        App\Models\Profile::MALE => 'Male',
+        App\Models\Profile::FEMALE => 'Female',
+    ],
 ];

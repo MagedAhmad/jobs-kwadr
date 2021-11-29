@@ -70,14 +70,6 @@ class RolesAndPermissionsSeeder extends Seeder
             ['name' => 'Pages show', 'type' => 'Pages', 'guard_name' => 'web'],
             ['name' => 'Pages delete', 'type' => 'Pages', 'guard_name' => 'web'],
 
-            // Categories
-            ['name' => 'Categories create', 'type' => 'Categories', 'guard_name' => 'web'],
-            ['name' => 'Categories update', 'type' => 'Categories', 'guard_name' => 'web'],
-            ['name' => 'Categories list', 'type' => 'Categories', 'guard_name' => 'web'],
-            ['name' => 'Categories show', 'type' => 'Categories', 'guard_name' => 'web'],
-            ['name' => 'Categories delete', 'type' => 'Categories', 'guard_name' => 'web'],
-
-
         ];
         foreach ($data as $datum) {
             Permission::firstOrCreate($datum);
@@ -96,6 +88,5 @@ class RolesAndPermissionsSeeder extends Seeder
         AppTables::firstOrCreate(['title' => 'Assistants', 'is_active' => 1]);
         AppTables::firstOrCreate(['title' => 'Feedbacks', 'is_active' => 1]);
         AppTables::firstOrCreate(['title' => 'Pages', 'is_active' => 1]);
-        AppTables::firstOrCreate(['title' => 'Categories', 'is_active' => 1]);
     }
 }

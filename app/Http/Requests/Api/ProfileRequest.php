@@ -4,6 +4,7 @@ namespace App\Http\Requests\Api;
 
 use App\Models\User;
 use App\Rules\PasswordRule;
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Http\Requests\Concerns\WithHashedPassword;
 
@@ -29,12 +30,37 @@ class ProfileRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['sometimes', 'required', 'string', 'max:255'],
-            'email' => ['sometimes', 'required', 'email', 'unique:users,email,'.auth()->id()],
-            'phone' => ['sometimes', 'required', 'unique:users,phone,'.auth()->id()],
-            'old_password' => ['required_with:password', new PasswordRule(auth()->user()->password)],
-            'password' => ['nullable', 'min:8', 'confirmed'],
-            'avatar' => ['nullable', 'image'],
+            'first_name' => ['required'],
+            'father_name' => ['required'],
+            'grandfather_name' => ['required'],
+            'family_name' => ['required'],
+            'gender' => ['required', Rule::in(['male', 'female'])],
+            'id_number' => ['required', 'numeric'],
+            'social_security_number' => ['required'],
+            'phone' => ['required', 'unique:profiles,phone'],
+            'email' => ['required', 'email', 'unique:profiles,email'],
+            'has_disability' => ['required'],
+            'has_driving_license' => ['required'],
+            'martial_id' => ['required', 'exists:martials,id'],
+            'neighbour_name' => ['required'],
+            'street' => ['required'],
+            'postal_code' => ['required'],
+            'additional_number' => ['nullable', 'numeric'],
+            'building_no' => ['required'],
+            'country_id' => ['required', 'exists:countries,id'],
+            'city_id' => ['required', 'exists:cities,id'],
+            'area_id' => ['required', 'exists:areas,id'],
+            'job_type_id' => ['required', 'exists:job_types,id'],
+            'skill_id' => ['required', 'exists:skills,id'],
+            'job_field_id' => ['required', 'exists:job_fields,id'],
+            'employer_id' => ['required', 'exists:employers,id'],
+            'supported_before' => ['nullable'],
+            'supporter_id' => ['nullable', 'exists:supporters,id'],
+            'first_goal' => ['required', 'exists:cities,id'],
+            'second_goal' => ['required', 'exists:cities,id'],
+            'third_goal' => ['required', 'exists:cities,id'],
+            'training_type_id' => ['required', 'exists:training_types,id'],
+            'certificate_name' => ['nullable'],
         ];
     }
 
@@ -45,14 +71,6 @@ class ProfileRequest extends FormRequest
      */
     public function attributes()
     {
-        switch (auth()->user()->type) {
-            case User::ADMIN_TYPE:
-                return trans('admins.attributes');
-                break;
-            case User::CUSTOMER_TYPE:
-            default:
-                return trans('customers.attributes');
-                break;
-        }
+        return trans('profiles.attributes');
     }
 }

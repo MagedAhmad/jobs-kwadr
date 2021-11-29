@@ -12,7 +12,7 @@ return [
                 /*
                  * Route for accessing api documentation interface
                 */
-                'api' => 'api/documentation',
+                'api' => 'api/docs',
             ],
             'paths' => [
                 /*
@@ -45,7 +45,7 @@ return [
             /*
              * Route for accessing parsed swagger annotations.
             */
-            'docs' => 'docs',
+            'docs' => 'docss',
 
             /*
              * Route for Oauth2 authentication callback.
@@ -197,7 +197,7 @@ return [
          * Uncomment to add constants which can be used in annotations
          */
         'constants' => [
-        'L5_SWAGGER_CONST_HOST' => env('L5_SWAGGER_CONST_HOST', 'http://scaffoldingnew.test/api'),
+        'L5_SWAGGER_CONST_HOST' => env('L5_SWAGGER_CONST_HOST', 'http://localhost:8000/api'),
         ],
     ],
 ];

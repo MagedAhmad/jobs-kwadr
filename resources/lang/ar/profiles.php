@@ -65,4 +65,8 @@ return [
             'cancel' => 'الغاء',
         ],
     ],
+    'gender' => [
+        App\Models\Profile::MALE => 'ذكر',
+        App\Models\Profile::FEMALE => 'أنثى',
+    ],
 ];
