@@ -14,7 +14,7 @@ class AddSupporterToProfilesTable extends Migration
     public function up()
     {
         Schema::table('profiles', function (Blueprint $table) {
-            $table->boolean('supported_before')->default(false);
+            $table->boolean('supported_before')->default(false)->nullable();
             $table->unsignedBigInteger('supporter_id')->nullable();
 
             $table->foreign('supporter_id')->references('id')->on('supporters')->cascadeOnDelete();

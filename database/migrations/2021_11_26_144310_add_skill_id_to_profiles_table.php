@@ -14,7 +14,7 @@ class AddSkillIdToProfilesTable extends Migration
     public function up()
     {
         Schema::table('profiles', function (Blueprint $table) {
-            $table->unsignedBigInteger('skill_id');
+            $table->unsignedBigInteger('skill_id')->nullable();
 
             $table->foreign('skill_id')->references('id')->on('skills')->cascadeOnDelete();
         });

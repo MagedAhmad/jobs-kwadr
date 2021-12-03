@@ -14,7 +14,7 @@ class AddJobTypeIdToProfilesTable extends Migration
     public function up()
     {
         Schema::table('profiles', function (Blueprint $table) {
-            $table->unsignedBigInteger('job_type_id');
+            $table->unsignedBigInteger('job_type_id')->nullable();
 
             $table->foreign('job_type_id')->references('id')->on('job_types')->cascadeOnDelete();
         });

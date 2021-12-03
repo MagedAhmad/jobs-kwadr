@@ -16,13 +16,13 @@ class AddAddressDetailsToProfilesTable extends Migration
         Schema::table('profiles', function (Blueprint $table) {
             $table->string('neighbour_name')->nullable();
             $table->string('street')->nullable();
-            $table->string('postal_code');
+            $table->string('postal_code')->nullable();
             $table->string('additional_number')->nullable();
             $table->string('building_no')->nullable();
 
-            $table->unsignedBigInteger('country_id');
-            $table->unsignedBigInteger('city_id');
-            $table->unsignedBigInteger('area_id');
+            $table->unsignedBigInteger('country_id')->nullable();
+            $table->unsignedBigInteger('city_id')->nullable();
+            $table->unsignedBigInteger('area_id')->nullable();
 
             $table->foreign('country_id')->references('id')->on('countries')->cascadeOnDelete();
             $table->foreign('city_id')->references('id')->on('cities')->cascadeOnDelete();

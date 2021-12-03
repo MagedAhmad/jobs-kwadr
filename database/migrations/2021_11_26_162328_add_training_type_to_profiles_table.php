@@ -14,7 +14,7 @@ class AddTrainingTypeToProfilesTable extends Migration
     public function up()
     {
         Schema::table('profiles', function (Blueprint $table) {
-            $table->unsignedBigInteger('training_type_id');
+            $table->unsignedBigInteger('training_type_id')->nullable();
             $table->string('certificate_name')->nullable();
 
             $table->foreign('training_type_id')->references('id')->on('training_types')->cascadeOnDelete();

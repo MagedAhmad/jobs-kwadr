@@ -14,7 +14,7 @@ class AddMartialIdToProfilesTable extends Migration
     public function up()
     {
         Schema::table('profiles', function (Blueprint $table) {
-            $table->unsignedBigInteger('martial_id');
+            $table->unsignedBigInteger('martial_id')->nullable();
 
             $table->foreign('martial_id')->references('id')->on('martials')->cascadeOnDelete();
         });

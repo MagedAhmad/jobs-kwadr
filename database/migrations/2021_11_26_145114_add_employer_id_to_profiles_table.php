@@ -14,7 +14,7 @@ class AddEmployerIdToProfilesTable extends Migration
     public function up()
     {
         Schema::table('profiles', function (Blueprint $table) {
-            $table->unsignedBigInteger('employer_id');
+            $table->unsignedBigInteger('employer_id')->nullable();
 
             $table->foreign('employer_id')->references('id')->on('employers')->cascadeOnDelete();
         });

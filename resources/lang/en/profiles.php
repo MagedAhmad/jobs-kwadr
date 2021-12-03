@@ -44,6 +44,9 @@ return [
         'country_id' => 'Nationality',
         'created_at' => 'Created At',
         'deleted_at' => 'Deleted At',
+        'address' => 'Address',
+        'city_id' => 'City',
+        'area_id' => 'Area',
     ],
     'dialogs' => [
         'delete' => [
@@ -66,7 +69,7 @@ return [
         ],
     ],
     'gender' => [
-        App\Models\Profile::MALE => 'Male',
         App\Models\Profile::FEMALE => 'Female',
+        App\Models\Profile::MALE => 'Male',
     ],
 ];

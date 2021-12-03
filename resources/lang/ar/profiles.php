@@ -11,6 +11,8 @@ return [
     'trashed' => 'الملفات التقديمية المحذوفين',
     'perPage' => 'عدد النتائج بالصفحة',
     'filter' => 'ابحث عن ملف تقديمى',
+    'main_data' => 'البيانات الأساسية',
+    'education' => 'المستوى التعليمى والتدريب',
     'actions' => [
         'list' => 'عرض الكل',
         'create' => 'اضافة ملف تقديمى',
@@ -20,12 +22,15 @@ return [
         'options' => 'خيارات',
         'save' => 'حفظ',
         'filter' => 'بحث',
+        'save_and_continue' => 'الحفظ والمتابعه',
     ],
     'messages' => [
         'created' => 'تم اضافة الملف التقديمي بنجاح.',
+        'token_not_valid' => 'رابط غير صحيح',
         'updated' => 'تم تعديل الملف التقديمي بنجاح.',
         'deleted' => 'تم حذف الملف التقديمي بنجاح.',
         'restored' => 'تم استعادة الملف التقديمي بنجاح.',
+        'finished' => 'تم الإنتهاء من التسجيل وجارى المراجعه من قبل الإدارة',
     ],
     'attributes' => [
         'image' => 'صورة الملف التقديمي',
@@ -49,6 +54,22 @@ return [
         'street' => 'اسم الشارع',
         'postal_code' => 'رقم البريد',
         'building_no' => 'رقم المبنى',
+        'address' => 'العنوان',
+        'city_id' => 'المدينة',
+        'area_id' => 'المنطقة',
+        'job_type_id' => 'تفضيلات العمل',
+        'job_field_id' => 'مجالات العمل',
+        'skill_id' => 'المهارة',
+        'employer_id' => 'جهة العمل',
+        'supporter_id' => 'مصدر الدعم',
+        'supported_before' => 'حصلت علي دعم من قبل',
+        'first_goal' => 'رغبة أولى',
+        'second_goal' => 'رغبه ثانية',
+        'third_goal' => 'رغبة ثالثه',
+        'training_type_id' => 'نوع التدريب',
+        'certificate_name' => 'اسم الشهادة',
+        'supporter_before' => 'حصل علي دعم من قبل',
+        'goals' => 'الرغبات',
     ],
     'dialogs' => [
         'delete' => [
@@ -71,7 +92,7 @@ return [
         ],
     ],
     'gender' => [
-        App\Models\Profile::MALE => 'ذكر',
         App\Models\Profile::FEMALE => 'أنثى',
+        App\Models\Profile::MALE => 'ذكر',
     ],
 ];

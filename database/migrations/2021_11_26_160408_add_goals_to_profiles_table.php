@@ -14,9 +14,9 @@ class AddGoalsToProfilesTable extends Migration
     public function up()
     {
         Schema::table('profiles', function (Blueprint $table) {
-            $table->unsignedBigInteger('first_goal');
-            $table->unsignedBigInteger('second_goal');
-            $table->unsignedBigInteger('third_goal');
+            $table->unsignedBigInteger('first_goal')->nullable();
+            $table->unsignedBigInteger('second_goal')->nullable();
+            $table->unsignedBigInteger('third_goal')->nullable();
 
             $table->foreign('first_goal')->references('id')->on('cities')->cascadeOnDelete();
             $table->foreign('second_goal')->references('id')->on('cities')->cascadeOnDelete();
