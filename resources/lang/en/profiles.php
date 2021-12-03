@@ -11,6 +11,8 @@ return [
     'trashed' => 'profiles Trashed',
     'perPage' => 'Results Per Page',
     'filter' => 'Search for profile',
+    'complete' => 'Complete profiles',
+    'in_complete' => 'In complete profiles',
     'actions' => [
         'list' => 'List All',
         'create' => 'Create a new profile',
@@ -71,5 +73,9 @@ return [
     'gender' => [
         App\Models\Profile::FEMALE => 'Female',
         App\Models\Profile::MALE => 'Male',
+    ],
+    'status' => [
+        'incomplete' => 'inactive',
+        'complete' => 'Complete'
     ],
 ];

@@ -13,6 +13,7 @@ class ProfileFilter extends BaseFilters
         'first_name',
         'father_name',
         'selected_id',
+        'status',
     ];
 
     /**
@@ -25,6 +26,25 @@ class ProfileFilter extends BaseFilters
     {
         if ($value) {
             return $this->builder->where('first_name', 'like', "%$value%");
+        }
+
+        return $this->builder;
+    }
+
+    /**
+     * Filter the query by status.
+     *
+     * @param string|int $value
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    protected function status($value)
+    {
+        if ($value) {
+            if($value == 'incomplete') {
+                return $this->builder->where('status', 0);
+            }else {
+                return $this->builder->where('status', 1);
+            }
         }
 
         return $this->builder;

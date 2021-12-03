@@ -25,7 +25,6 @@
                             fileName="Profiles"
                             ></x-export-excel>
                 <div class="ml-2 d-flex justify-content-between flex-grow-1">
-                    @include('dashboard.profiles.partials.actions.create')
                     @include('dashboard.profiles.partials.actions.trashed')
                 </div>
             </div>
@@ -46,7 +45,7 @@
                 @lang("profiles.attributes.grandfather_name")
             </th>
             <th>
-                @lang("profiles.attributes.family_name")
+                @lang("profiles.attributes.status")
             </th>
             <th>
                 @lang("profiles.attributes.gender")
@@ -80,7 +79,13 @@
             
                 <td>{{ $profile->grandfather_name }}</td>
             
-                <td>{{ $profile->family_name }}</td>
+                <td>
+                    @if($profile->status)
+                        <span class="badge badge-success">{{__('profiles.status.complete')}}</span>
+                    @else   
+                        <span class="badge badge-danger">{{__('profiles.status.incomplete')}}</span>
+                    @endif
+                </td>
             
                 <td>
                     @if($profile->gender == __('profiles.gender.male'))
@@ -100,8 +105,9 @@
             
             
                 <td style="width: 160px">
-                    @include('dashboard.profiles.partials.actions.show')
-                    @include('dashboard.profiles.partials.actions.edit')
+                    @if($profile->status)
+                        @include('dashboard.profiles.partials.actions.show')
+                    @endif
                     @include('dashboard.profiles.partials.actions.delete')
                 </td>
             </tr>

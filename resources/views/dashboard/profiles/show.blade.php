@@ -4,7 +4,7 @@
             @component('dashboard::components.box')
                 @slot('class', 'p-0')
                 @slot('bodyClass', 'p-0')
-
+                <h2>البيانات الأساسية</h2>
                 <table class="table table-striped table-middle">
                     <tbody>
                     
@@ -80,6 +80,30 @@
                                 {{$profile->martial->name}}
                             </td>
                         </tr>
+                        
+                        
+
+            
+                    @if($profile->getFirstMedia())
+                        <tr>
+                            <th width="200">@lang('profiles.attributes.image')</th>
+                            <td>
+                                <file-preview :media="{{ $profile->getMediaResource() }}"></file-preview>
+                            </td>
+                        </tr>
+                    @endif
+                    </tbody>
+                </table>
+            @endcomponent
+        </div>
+        <div class="col-md-6">
+            @component('dashboard::components.box')
+                @slot('class', 'p-0')
+                @slot('bodyClass', 'p-0')
+                <h2>{{__('profiles.attributes.address')}}</h2>
+                <table class="table table-striped table-middle">
+                    <tbody>
+                    
                         <tr>
                             <th width="200">@lang("profiles.attributes.neighbour_name")</th>
                             <td>
@@ -128,24 +152,77 @@
                                 {{$profile->area->name}}
                             </td>
                         </tr>
-                        
-
-            
-                    @if($profile->getFirstMedia())
-                        <tr>
-                            <th width="200">@lang('profiles.attributes.image')</th>
-                            <td>
-                                <file-preview :media="{{ $profile->getMediaResource() }}"></file-preview>
-                            </td>
-                        </tr>
-                    @endif
                     </tbody>
                 </table>
-
-                @slot('footer')
-                    @include('dashboard.profiles.partials.actions.edit')
-                    @include('dashboard.profiles.partials.actions.delete')
-                @endslot
+            @endcomponent
+            <hr>
+            @component('dashboard::components.box')
+                @slot('class', 'p-0')
+                @slot('bodyClass', 'p-0')
+                <h2>{{__('profiles.education')}}</h2>
+                <table class="table table-striped table-middle">
+                    <tbody>
+                    
+                        <tr>
+                            <th width="200">@lang("profiles.attributes.job_type_id")</th>
+                            <td>
+                                {{$profile->job_type->name}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="200">@lang("profiles.attributes.job_field_id")</th>
+                            <td>
+                                {{$profile->job_field->name}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="200">@lang("profiles.attributes.skill_id")</th>
+                            <td>
+                                {{$profile->skill->name}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="200">@lang("profiles.attributes.supported_before")</th>
+                            <td>
+                                @if($profile->supported_before)
+                                    <i class="fa fa-check"></i>
+                                @else  
+                                    <i class="fa fa-times"></i>
+                                @endif
+                            </td>
+                        </tr>
+                        @isset($profile->supporter_id)
+                        <tr>
+                            <th width="200">@lang("profiles.attributes.supporter_id")</th>
+                            <td>
+                                {{$profile->supporter->name }}
+                            </td>
+                        </tr>
+                        @else  
+                        <tr>
+                            <th width="200">@lang("profiles.attributes.supporter_id")</th>
+                            <td>
+                                -
+                            </td>
+                        </tr>
+                        @endisset
+                        <tr>
+                            <th width="200">@lang("profiles.attributes.training_type_id")</th>
+                            <td>
+                                {{$profile->training_type->name}}
+                            </td>
+                        </tr>
+                        @isset($profile->certificate_name)
+                        <tr>
+                            <th width="200">@lang("profiles.attributes.certificate_name")</th>
+                            <td>
+                                {{$profile->certificate_name}}
+                            </td>
+                        </tr>
+                        @endisset
+                        
+                    </tbody>
+                </table>
             @endcomponent
         </div>
     </div>

@@ -35,6 +35,7 @@ class MainProfileDataRequest extends FormRequest
             "email" => 'required',
             "has_disability" => 'nullable',
             "has_driving_license" => 'nullable',
+            'martial_id' => 'required'
         ];
     }
 }

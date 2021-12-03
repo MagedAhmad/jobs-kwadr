@@ -48,6 +48,14 @@
             </div>
             
         </div>
+        <div class="md:flex my-2">
+            <label for="martial_id" class="mt-2 mx-2 block mb-2 text-sm text-gray-600 dark:text-gray-400">{{__('profiles.attributes.martial_id')}}</label>
+            <select name="martial_id" value="{{$profile->martial_id}}"  class="px-16 py-2">
+                @foreach(\App\Models\Martial::all() as $martial)
+                <option value="{{$martial->id}}">{{$martial->name}}</option>
+                @endforeach
+            </select>
+        </div>
         <div class="md:flex">
             <div class="mb-6 md:ml-16">
                 <label for="gender" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">{{__('profiles.attributes.gender')}}</label>

@@ -6,7 +6,6 @@
     <div class="max-w-md w-full bg-gray-900 rounded p-6 space-y-4">
         <div class="mb-4">
             <p class="text-gray-400">سجلى معنا</p>
-            <h2 class="text-xl font-bold text-white">Join our community</h2>
         </div>
         <div>
             <input name="email" class="w-full p-4 text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" type="email" placeholder="{{__('profiles.attributes.email')}}">

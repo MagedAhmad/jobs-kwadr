@@ -25,7 +25,7 @@ class InitialProfileRequest extends FormRequest
     {
         return [
             'email' => ['required', 'email'],
-            'social_security_number' => ['required', 'unique:profiles'],
+            'social_security_number' => ['required'],
         ];
     }
 }

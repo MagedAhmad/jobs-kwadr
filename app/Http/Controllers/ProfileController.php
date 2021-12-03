@@ -37,6 +37,12 @@ class ProfileController extends Controller
         ])->first();
 
         if($profile) {
+            if($profile->status) {
+                flash(trans('profiles.messages.finished'));
+
+                return redirect('profile');
+            }
+                
             return redirect(route('profiles.home', $profile));
         }
 
@@ -115,7 +121,7 @@ class ProfileController extends Controller
 
         $step = $profileToken->step;
 
-        return view('frontend.home', compact('profile', 'step', 'token'));
+        return redirect(route('profiles.home', $token->token));
     }
 
     /**
@@ -147,7 +153,7 @@ class ProfileController extends Controller
 
         $step = $profileToken->step;
 
-        return view('frontend.home', compact('profile', 'step', 'token'));
+        return redirect(route('profiles.home', $token->token));
     }
 
     /**
@@ -179,7 +185,7 @@ class ProfileController extends Controller
 
         $step = $profileToken->step;
 
-        return view('frontend.home', compact('profile', 'step', 'token'));
+        return redirect(route('profiles.home', $token->token));
     }
 
     /**

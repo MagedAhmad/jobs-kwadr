@@ -13,7 +13,9 @@ class DashboardController extends Controller
     public function index()
     {
         $profilesCount = Profile::count();
-
+        $profilesComplete = Profile::where('status', 1)->count();
+        $profilesInComplete = Profile::where('status', 0)->count();
+        
         return view('dashboard.home', get_defined_vars());
     }
 }

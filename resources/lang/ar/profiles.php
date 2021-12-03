@@ -13,6 +13,8 @@ return [
     'filter' => 'ابحث عن ملف تقديمى',
     'main_data' => 'البيانات الأساسية',
     'education' => 'المستوى التعليمى والتدريب',
+    'complete' => 'الملفات التقديميه المكتملة',
+    'in_complete' => 'الملفات التقديميه الغير مكتملة',
     'actions' => [
         'list' => 'عرض الكل',
         'create' => 'اضافة ملف تقديمى',
@@ -70,6 +72,8 @@ return [
         'certificate_name' => 'اسم الشهادة',
         'supporter_before' => 'حصل علي دعم من قبل',
         'goals' => 'الرغبات',
+        'status' => 'حالة الملف التقديمى',
+        'martial_id' => 'الحالة الإجتماعية',
     ],
     'dialogs' => [
         'delete' => [
@@ -94,5 +98,9 @@ return [
     'gender' => [
         App\Models\Profile::FEMALE => 'أنثى',
         App\Models\Profile::MALE => 'ذكر',
+    ],
+    'status' => [
+        'incomplete' => 'غير مكتمل',
+        'complete' => 'مكتمل'
     ],
 ];
