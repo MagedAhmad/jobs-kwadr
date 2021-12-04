@@ -48,6 +48,16 @@ class ProfileController extends Controller
 
         $token = Str::random(32);
 
+        $profile = Profile::where([
+            'email' => $request->email
+        ])->first();
+
+        if($profile) {
+            flash(trans('profiles.messages.email_used'));
+
+            return redirect('profile');
+        }
+
         $profile = Profile::create([
             'social_security_number' => $request->social_security_number,
             'email' => $request->email
