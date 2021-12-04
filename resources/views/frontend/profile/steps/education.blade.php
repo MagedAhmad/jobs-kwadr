@@ -6,14 +6,15 @@
             <div class="flex">
                 <div class="md:flex my-2">
                     <label for="training_type_id" class="mt-2 mx-2 block mb-2 text-sm text-gray-600 dark:text-gray-400">{{__('profiles.attributes.training_type_id')}}</label>
-                    <select class="px-4 mx-2" name="training_type_id" value="{{$profile->training_type}}"  class="px-16 py-2">
+                    <select id="training_type_id" class="px-4 mx-2" name="training_type_id" value="{{$profile->training_type}}"  class="px-16 py-2">
+                        <option value="">Choose</option>
                         @foreach(\App\Models\TrainingType::all() as $training_type)
                         <option value="{{$training_type->id}}">{{$training_type->name}}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="md:flex my-2">
-                    <input type="text" class="w-full border pr-2" placeholder="{{__('profiles.attributes.certificate_name')}}" name="certificate_name" value="{{$profile->certificate_name}}">
+                    <input type="text" id="certificate" class="w-full hidden border pr-2" placeholder="{{__('profiles.attributes.certificate_name')}}" name="certificate_name" value="{{$profile->certificate_name}}">
                 </div>
             </div>
             
@@ -48,9 +49,9 @@
         </div>
         <div class="md:flex my-2">
             <label for="supported_before" class="mt-2 mx-2 block mb-2 text-sm text-gray-600 dark:text-gray-400">{{__('profiles.attributes.supported_before')}}</label>
-            <input type="checkbox" name="supported_before" value="1" @if($profile->supported_before) checked @endif >
+            <input id="supported" type="checkbox" name="supported_before" value="1" @if($profile->supported_before) checked @endif >
         </div>
-        <div class="md:flex my-2">
+        <div id="supporter_id" class="hidden my-2">
             <label for="supporter_id" class="mt-2 mx-2 block mb-2 text-sm text-gray-600 dark:text-gray-400">{{__('profiles.attributes.supporter_id')}}</label>
             <select name="supporter_id" value="{{$profile->supporter_id}}"  class="px-16 py-2">
                 @foreach(\App\Models\Supporter::all() as $supporter)
@@ -71,3 +72,4 @@
     </div>  
 </div>
  
+
